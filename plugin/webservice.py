@@ -29,7 +29,9 @@ class webservicePlugin(Plugin):
         	'text': speech,
         	'language': language,
         	'latitude': str( location.latitude ),
-        	'longitude': str( location.longitude )
+        	'longitude': str( location.longitude ),
+        	'timezone': self.assistant.timeZoneId,
+        	'region': self.assistant.region
         };
         
         req = urllib2.Request( pireLocation + "?" + urllib.urlencode( postdata ),
@@ -38,12 +40,6 @@ class webservicePlugin(Plugin):
 			"Accept": "*/*",   
         	"User-Agent": "pire-plugin", 
        	})
-       	
-        print '^^^^^^^^^^^^'
-        print 'Language: ' + language
-        print 'Lat: ' + str( location.latitude )
-        print 'Long: ' + str( location.longitude )
-        print '^^^^^^^^^^^^'
        	
         webjson = urllib2.urlopen(req).read()
         request = json.loads(webjson)

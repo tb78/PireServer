@@ -38,9 +38,9 @@
  class mapsObject extends defaultObject
  {
  	
- 	function __construct( $Latitude = '', $Longitude = '' )
+ 	function __construct( $Latitude = '', $Longitude = '', $Label = 'Your current location', $showUser = true )
  	{
- 	
+ 		
  		$this -> object = array(
  			'group' => 'com.apple.ace.localsearch',
  			'class' => 'MapItemSnippet',
@@ -50,7 +50,7 @@
  					'class' => 'MapItem',
  					'properties' => array(
  						'detailType' => 'BUSINESS_ITEM',
- 						'label' => 'Your current location',
+ 						'label' => $Label,
  						'location' => array(
  							'class' => 'Location',
  							'group' => 'com.apple.ace.system',
@@ -67,7 +67,7 @@
  						),
  					),
  				) ),
- 				'userCurrentLocation' => true
+ 				'userCurrentLocation' => $showUser
  			)
  		);
  	}

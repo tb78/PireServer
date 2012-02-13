@@ -3,12 +3,8 @@
  class clockObject extends defaultObject
  {
  	
- 	function __construct( $Time = false )
+ 	function __construct( $Time = 'Europe/Amsterdam', $City = 'Amsterdam', $Country = 'NL' )
  	{
- 		if( $Time == false )
- 		{
- 			$Time = 'Europe/Amsterdam';
- 		}
  	
  		$this -> object = array(
  			'group' => 'com.apple.ace.clock',
@@ -18,12 +14,12 @@
  					'group' => 'com.apple.ace.clock',
  					'class' => 'Object',
  					'properties' => array(
- 						'timezoneId' => 'Europe/Amsterdam',
- 						'cityName' => 'Amsterdam',
- 						'countryCode' => 'NL',
- 						'countryName' => 'Amsterdam',
- 						'unlocalizedCityName' => 'Amsterdam',
- 						'unlocalizedCountryName' => 'Amsterdam',
+ 						'timezoneId' => $Time,
+ 						'cityName' => $City,
+ 						'countryCode' => $Country,
+ 						'countryName' => $City,
+ 						'unlocalizedCityName' => $City,
+ 						'unlocalizedCountryName' => $City,
  					),
  				) ),
  			)

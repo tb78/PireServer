@@ -43,7 +43,7 @@
  	
  	function processCommand()
  	{
- 		$this -> command;
+ 		//$this -> command;
  		
  		foreach( $this -> coreRoute AS $Key => $Value )
  		{
